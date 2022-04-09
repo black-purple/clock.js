@@ -10,13 +10,13 @@ Clock web app (+ other features like stopwatch and timer coming soon) made using
 
 # Contributors
 * This repo is a fork of [sbaiti1](https://github.com/sbaiti1/)'s JS clock.
-* [DAKIR ALLAH Abderrahman - a.k.a. black-purple on GitHub -](https:/github.com/black-purple)
+* [DAKIR ALLAH Abderrahman - a.k.a. black-purple on GitHub -](https://github.com/black-purple)
   
   ![](https://img.shields.io/badge/current%20position-student%2Fdev-purple)
 
 
 # Live Demo
 
-Click <a href="https://black-purple.github.io/clock/html/" target="_blank">here</a> to see the code in action.
+Click [here](https://black-purple.github.io/clock/html/) to see the code in action.
 
 ***NOTE: This project is hosted on [GitHub Pages](https://pages.github.com/)***
