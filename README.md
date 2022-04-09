@@ -17,6 +17,6 @@ Clock web app (+ other features like stopwatch and timer coming soon) made using
 
 # Live Demo
 
-Click [here](https://black-purple.github.io/clock/html/) to see the code in action.
+Click <a href="https://black-purple.github.io/clock/html/" target="_blank">here</a> to see the code in action.
 
 ***NOTE: This project is hosted on [GitHub Pages](https://pages.github.com/)***
