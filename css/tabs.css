@@ -17,11 +17,15 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
+    transform: scale(1);
 }
 .mytabs label:hover {
-    color: hsl(var(--sry-clr)/.9);
+    color: hsl(var(--sry-clr)/.5);
     background-color: hsl(var(--sry-clr)/.05);
 }
+.mytabs label:active{
+    transform: scale(0.95);
+} 
 .mytabs .tab {
     width: 100vw;
     height: 100%;
@@ -35,7 +39,9 @@
 }
 
 .mytabs input[type='radio']:checked + label + .tab {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mytabs input[type="radio"]:checked + label {
