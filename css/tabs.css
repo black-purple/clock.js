@@ -1,0 +1,43 @@
+@import url(../css/vars.css);
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: .3rem;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    padding: 2rem;
+    background-color: hsl(var(--pry-clr));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.mytabs label:hover {
+    color: hsl(var(--sry-clr)/.9);
+    background-color: hsl(var(--sry-clr)/.05);
+}
+.mytabs .tab {
+    width: 100vw;
+    height: 100%;
+    padding: 20vh 20vw;
+    background-color: hsl(var(--pry-clr));
+    order: 1;
+    display: none;
+}
+.mytabs .tab h2 {
+    color: white;
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    color: hsl(var(--sry-clr));
+}

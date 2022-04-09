@@ -1,45 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Anaheim&family=Cinzel:wght@500&family=Comforter+Brush&family=Gruppo&family=IBM+Plex+Sans:wght@200&family=Inconsolata:wdth,wght@114.9,631&family=Open+Sans:wght@300&family=Oswald:wght@600&family=Sansita+Swashed&display=swap');
+@import url(../css/vars.css);
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #060a1f;
+    background-color: hsl(var(--pry-clr));
 }
 
 #clock h2{
-    /*position: relative;
-    display: block;*/
     text-align: center;
-    color: #fff;
+    color: white;
     margin: 10px 0;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
+    letter-spacing: .4em;
     font-size: 2em;
 }
-
 #time{
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 }
-
 #time div{
     position: relative;
     margin: 0 5px;
-    -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+    -webkit-box-reflect: below .2rem linear-gradient(transparent,#0004);
 }
 #time div span:first-child{
     border-top-left-radius: 6px;
@@ -50,8 +41,8 @@ body{
     display: block;
     width: 100px;
     height: 80px;
-    background: #2196f3;
-    color: #fff;
+    background: hsl(var(--sry-clr));
+    color: white;
     font-weight: 300;
     font-size: 3em;
     display: flex;
@@ -59,24 +50,20 @@ body{
     align-items: center;
     z-index: 10;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
-    
 }
-
 #time div span:nth-child(2){
     height: 30px;
     font-size: 0.7em;
-    letter-spacing: 0.2em;
+    letter-spacing: .2em;
     font-weight: 700;
     z-index: 9;
     box-shadow: none;
-    background: #127fd6;
+    background: hsl(var(--sry-clr)/.9);
     text-transform: uppercase;
 }
-
 #time div:last-child span{
-    background: #ff006a;
+    background: hsl(var(--act-clr));
 }
-
 #time div:last-child span:nth-child(2){
-    background: #ec0062;
+    background: hsl(var(--act-clr)/.9);
 }

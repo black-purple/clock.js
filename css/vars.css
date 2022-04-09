@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Anaheim&family=Cinzel:wght@500&family=Comforter+Brush&family=Gruppo&family=IBM+Plex+Sans:wght@200&family=Inconsolata:wdth,wght@114.9,631&family=Open+Sans:wght@300&family=Oswald:wght@600&family=Sansita+Swashed&display=swap');
+
+:root{
+    --pry-clr:230 68% 7%;
+    --sry-clr:207 90% 54%;
+    --act-clr:335 100% 50%;
+}
