@@ -6,6 +6,11 @@ let hours_input = timer_setter.children[1];
 let minutes_input = timer_setter.children[4];
 let secs_input = timer_setter.children[7];
 
+let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+let d = new Date();
+let targetTime = new Date(`${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} ${hours_input.value}:${hours_input.value}:${hours_input.value}`).getTime();
+
 // Hours controller
 timer_setter.children[0].onclick = () => {
     let value = parseInt(hours_input.value);
@@ -78,7 +83,8 @@ timer_reset.onclick = () => {
 
 function timer () {
 
-    let timeleft = (parent(hours_input.value) * 3600) + (parseInt(minutes_input.value) * 60) + parseInt(secs_input.value);
+    let now = new Date().getTime();
+    let timeleft = targetTime - now;
         
     // Calculating the hours, minutes and seconds left
     let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -92,7 +98,7 @@ function timer () {
         
     // Display the message when countdown is over
     if (timeleft < 0) {
-        clearInterval(timer_interval);
+        clearInterval(timer);
         document.querySelector("#hours").textContent = "";
         document.querySelector("#mins").textContent = "";
         document.querySelector("#secs").textContent = "";
@@ -106,10 +112,9 @@ function timer () {
 
         document.querySelector("#end").textContent = "TIME UP!!";
     }
-}
-
-let timer_interval = null;
-timer_start.onclick = () => {
-    timer_interval = setInterval(timer, 1000);
+    }
+    
+    timer_start.onclick = () => {
+        setInterval(timer, 500);
 }
 
