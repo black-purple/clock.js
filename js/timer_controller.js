@@ -1,4 +1,5 @@
 const timer_setter = document.querySelector("#timer_setter");
+const timer_input = document.querySelector("#timer_input"); 
 const timer_start = document.querySelector("#timer_start");
 const timer_reset = document.querySelector("#timer_reset");
 
@@ -81,7 +82,13 @@ timer_reset.onclick = () => {
     secs_input.value = '00';
 }
 
-function timer (targetTime) {
+
+function timer () {
+
+    let target_time = Number.parseInt(timer_input.value);
+    console.log(target_time);
+    target_time -= 1;
+    timer_input.value = target_time;
 
     let now = new Date().getTime();
     let timeleft = targetTime - now;
@@ -113,9 +120,10 @@ function timer (targetTime) {
         document.querySelector("#end").textContent = "TIME UP!!";
     }
     }
-setInterval(timer, 500);
+
+let timer_interval = null;
 
 timer_start.onclick = () => {
-    timer(targetTime);
+    timer_interval = setInterval(timer, 1000);
 }
 
