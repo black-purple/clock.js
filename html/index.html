@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <!-- Styles -->
-    <link rel="stylesheet" href="../css/tabs.css">
-    <link rel="stylesheet" href="../css/clocks.css">
-    <link rel="stylesheet" href="../css/timer.css">
-    <link rel="stylesheet" href="../css/stopwatch.css">
-    <link rel="stylesheet" href="../css/hint.css">
-    <!-- Scripts -->
-    <script src="../js/digital_clock.js"></script>
-    <title>CLOCK</title>
-</head>
-<body>
-    <div class="tabs">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+        <!-- Styles -->
+        <link rel="stylesheet" href="../css/tabs.css">
+        <link rel="stylesheet" href="../css/clocks.css">
+        <link rel="stylesheet" href="../css/timer.css">
+        <link rel="stylesheet" href="../css/stopwatch.css">
+        <link rel="stylesheet" href="../css/hint.css">
+        <!-- Scripts -->
+        <script src="../js/digital_clock.js"></script>
+        <title>CLOCK</title>
+    </head>
+    <body>
+        <div class="tabs">
         <!-- Clock tab -->
         <input type="radio" id="clock_tab" name="tabs" checked>
         <label for="clock_tab">Clock</label>
@@ -28,7 +28,7 @@
                     <div><span class="time_value">00</span><span>Hours</span></div>
                     <div><span class="time_value">00</span><span>Minutes</span></div>            
                     <div><span class="time_value">00</span><span>Seconds</span></div>
-        
+                    
                 </div>
             </div>
             <div id="analog_clock" title="click to switch clock type">
@@ -43,7 +43,7 @@
                         <div class="hand second-hand"></div>
                     </div>
                 </div>
-
+                
             </div>
             <div class="dropdown">
                 <span class="help">&quest;</span>
@@ -71,23 +71,23 @@
                 <input type="number" min="0" max="60" value="0" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
             </div>
-
+            
             <div id="timer_text">
-                <span id="hours">00</span><span>H</span>
-                <span id="mins">00</span><span>M</span>
-                <span id="secs">00</span><span>S</span>
-                <span id="end"></span>
+                <span id="hours" class="hours">00</span><span>H</span>
+                <span id="mins" class="minutes">00</span><span>M</span>
+                <span id="secs" class="seconds">00</span><span>S</span>
+                <span id="end">TIME UP!!</span>
             </div>
-
+            
             <div id="timer_control">
                 <button type="button" id="timer_start">Start</button>
                 <button type="button" id="timer_reset">Reset</button>
             </div>
-
+            
             <div class="dropdown">
                 <span class="help">&quest;</span>
                 <div class="dropdown-content hint">
-                  <p class="hint">Use &plus; and &minus; buttons or <kbd>&uparrow;</kbd> and <kbd>&downarrow;</kbd> keys on your keyboard to change numbers</p>
+                    <p class="hint">Use &plus; and &minus; buttons or <kbd>&uparrow;</kbd> and <kbd>&downarrow;</kbd> keys on your keyboard to change numbers</p>
                 </div>
             </div>
         </div>

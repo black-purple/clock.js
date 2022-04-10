@@ -7,6 +7,7 @@ const mins_text = document.querySelector("#mins");
 const hrs_text = document.querySelector("#hours");
 
 const end_text = document.querySelector("#end");
+end_text.style.display = 'none';
 
 const hours_input = timer_setter.children[1];
 const minutes_input = timer_setter.children[4];
@@ -78,7 +79,6 @@ timer_setter.children[8].onclick = () => {
 
 // Reset
 timer_reset.onclick = () => {
-    clearInterval(timer_interval);
     hours_input.value = 0;
     minutes_input.value = 0;
     secs_input.value = 0;
@@ -108,36 +108,41 @@ timer_reset.onclick = () => {
     hours_input.removeAttribute('disabled');
     minutes_input.removeAttribute('disabled');
     secs_input.removeAttribute('disabled');
+
+    clearInterval(timeinterval);
 }
-
-
-function timer () {
-    let secs = parseInt(secs_input.value);
-    let mins = parseInt(minutes_input.value);
-    let hrs = parseInt(hours_input.value);
-    // console.log(hrs, mins, secs);
+function getTimeRemaining(endtime) {
+    const total = Date.parse(endtime) - Date.parse(new Date());
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
     
-    secs_text.textContent = parseInt(secs_text.textContent) <58
-    ? parseInt(secs_text.textContent) < 9 
-        ? '0' + (parseInt(secs_text.textContent) + 1) 
-        : parseInt(secs_text.textContent) + 1
-    : mins_text.textContent = '0' + (parseInt(mins_text.textContent) + 1);
+    return {
+      total,
+      hours,
+      minutes,
+      seconds
+    };
+}
+let timeinterval = null;
+function initializeClock(id, endtime) {
+    const clock = document.getElementById(id);
+    const hoursSpan = clock.querySelector('.hours');
+    const minutesSpan = clock.querySelector('.minutes');
+    const secondsSpan = clock.querySelector('.seconds');
 
-    mins.textContent = parseInt(mins_text.textContent) <58
-    ? parseInt(mins_text.textContent) < 9 
-        ? '0' + (parseInt(mins_text.textContent) + 1) 
-        : parseInt(secs_text.textContent) + 1
-    : mins_text.textContent = '0' + (parseInt(mins_text.textContent) + 1);
-    
-    if (
-           ( parseInt(secs_text.textContent) == secs || ( parseInt(secs_text.textContent) == '0' + secs ) ) 
-        && ( parseInt(mins_text.textContent) == mins || ( parseInt(mins_text.textContent) == '0' + mins ) ) 
-        && ( parseInt(hrs_text.textContent) == hrs   || ( parseInt(hrs_text.textContent) == '0' + hrs ) )
-        ) {
-        clearInterval(timer_interval);
+    function updateClock() {
+      const t = getTimeRemaining(endtime);
+
+      hoursSpan.textContent = ('0' + t.hours).slice(-2);
+      minutesSpan.textContent = ('0' + t.minutes).slice(-2);
+      secondsSpan.textContent = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
         hrs_text.style.display = "none";
         hrs_text.nextElementSibling.style.display = "none";
-
+        
         mins_text.style.display = "none";
         mins_text.nextElementSibling.style.display = "none";
 
@@ -145,13 +150,18 @@ function timer () {
         secs_text.nextElementSibling.style.display = "none";
 
         end_text.style.display = "inline";
-        end_text.textContent = "TIME UP!!";
+      }
     }
-}
 
-let timer_interval = null;
+    updateClock();
+    timeinterval = setInterval(updateClock, 1000);
+}
+let hrs = 1;
+let mins = 1;
+let secs = 15;
+const deadline = new Date(Date.parse(new Date()) + (hrs) * (mins) * (secs) * 1000);
 timer_start.onclick = () => {
-    timer_interval = setInterval(timer, 1000);
+    initializeClock('timer_text', deadline);
     timer_start.setAttribute('disabled', '');
     hours_input.setAttribute('disabled', '');
     minutes_input.setAttribute('disabled', '');
