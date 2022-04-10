@@ -18,7 +18,7 @@
 <body>
     <div class="tabs">
         <!-- Clock tab -->
-        <input type="radio" id="clock_tab" name="tabs" checked>
+        <input type="radio" id="clock_tab" name="tabs">
         <label for="clock_tab">Clock</label>
         <div class="tab">
             <h2 class="phrase">Current time is </h2>
@@ -47,21 +47,21 @@
         </div>
         
         <!-- Timer tab -->
-        <input type="radio" id="timer_tab" name="tabs">
+        <input type="radio" id="timer_tab" name="tabs" checked>
         <label for="timer_tab">Timer</label>
         <div class="tab timer_tab">
             <h2>Set Timer</h2>
             <div id="timer_setter">
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
-                <input type="number" min="0" max="24" value="00" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
+                <input type="number" min="0" max="24" value="0" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
                 
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
-                <input id="timer_input" type="number" min="0" max="60" value="00" title="use buttons or up and down keys on your keyboard to change number">
+                <input type="number" min="0" max="60" value="0" title="use buttons or up and down keys on your keyboard to change number">
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
                 
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
-                <input type="number" min="0" max="60" value="00" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
+                <input type="number" min="0" max="60" value="0" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
                 <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
             </div>
 

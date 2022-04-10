@@ -2,14 +2,15 @@ const timer_setter = document.querySelector("#timer_setter");
 const timer_start = document.querySelector("#timer_start");
 const timer_reset = document.querySelector("#timer_reset");
 
-let hours_input = timer_setter.children[1];
-let minutes_input = timer_setter.children[4];
-let secs_input = timer_setter.children[7];
+const secs_text = document.querySelector("#secs");
+const mins_text = document.querySelector("#mins");
+const hrs_text = document.querySelector("#hours");
 
-let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const end_text = document.querySelector("#end");
 
-let d = new Date();
-let targetTime = new Date(`${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} ${hours_input.value}:${hours_input.value}:${hours_input.value}`).getTime();
+const hours_input = timer_setter.children[1];
+const minutes_input = timer_setter.children[4];
+const secs_input = timer_setter.children[7];
 
 // Hours controller
 timer_setter.children[0].onclick = () => {
@@ -75,46 +76,91 @@ timer_setter.children[8].onclick = () => {
     secs_input.value = value;
 }
 
+// Reset
 timer_reset.onclick = () => {
-    hours_input.value = '00';
-    minutes_input.value = '00';
-    secs_input.value = '00';
+    clearInterval(timer_interval);
+    hours_input.value = 0;
+    minutes_input.value = 0;
+    secs_input.value = 0;
+    hrs_text.textContent = '00'; 
+    mins_text.textContent = '00'; 
+    secs_text.textContent = '00'; 
+    secs = 0;
+    mins = 0;
+    hrs = 0;
+    hrs_text.style.display = "inline";
+    hrs_text.nextElementSibling.style.display = "inline";
+    
+    mins_text.style.display = "inline";
+    mins_text.nextElementSibling.style.display = "inline";
+
+    secs_text.style.display = "inline";
+    secs_text.nextElementSibling.style.display = "inline";
+
+    end_text.style.display = "none";
+    timer_start.removeAttribute('disabled');
+    timer_setter.children[0].removeAttribute('disabled');
+    timer_setter.children[2].removeAttribute('disabled');
+    timer_setter.children[3].removeAttribute('disabled');
+    timer_setter.children[5].removeAttribute('disabled');
+    timer_setter.children[6].removeAttribute('disabled');
+    timer_setter.children[8].removeAttribute('disabled');
+    hours_input.removeAttribute('disabled');
+    minutes_input.removeAttribute('disabled');
+    secs_input.removeAttribute('disabled');
 }
 
+
 function timer () {
-
-    let now = new Date().getTime();
-    let timeleft = targetTime - now;
-        
-    // Calculating the hours, minutes and seconds left
-    let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-        
-    // Result is output to the specific element
-    document.querySelector("#hours").textContent = hours; 
-    document.querySelector("#mins").textContent = minutes; 
-    document.querySelector("#secs").textContent = seconds; 
-        
-    // Display the message when countdown is over
-    if (timeleft < 0) {
-        clearInterval(timer);
-        document.querySelector("#hours").textContent = "";
-        document.querySelector("#mins").textContent = "";
-        document.querySelector("#secs").textContent = "";
-
-        document.querySelector("#hours").style.display = "none";
-        document.querySelector("#hours").nextElementSibling.style.display = "none";
-        document.querySelector("#mins").style.display = "none";
-        document.querySelector("#mins").nextElementSibling.style.display = "none";
-        document.querySelector("#secs").style.display = "none";
-        document.querySelector("#secs").nextElementSibling.style.display = "none";
-
-        document.querySelector("#end").textContent = "TIME UP!!";
-    }
-    }
+    let secs = parseInt(secs_input.value);
+    let mins = parseInt(minutes_input.value);
+    let hrs = parseInt(hours_input.value);
+    // console.log(hrs, mins, secs);
     
-    timer_start.onclick = () => {
-        setInterval(timer, 500);
+    secs_text.textContent = parseInt(secs_text.textContent) <58
+    ? parseInt(secs_text.textContent) < 9 
+        ? '0' + (parseInt(secs_text.textContent) + 1) 
+        : parseInt(secs_text.textContent) + 1
+    : mins_text.textContent = '0' + (parseInt(mins_text.textContent) + 1);
+
+    mins.textContent = parseInt(mins_text.textContent) <58
+    ? parseInt(mins_text.textContent) < 9 
+        ? '0' + (parseInt(mins_text.textContent) + 1) 
+        : parseInt(secs_text.textContent) + 1
+    : mins_text.textContent = '0' + (parseInt(mins_text.textContent) + 1);
+    
+    if (
+           ( parseInt(secs_text.textContent) == secs || ( parseInt(secs_text.textContent) == '0' + secs ) ) 
+        && ( parseInt(mins_text.textContent) == mins || ( parseInt(mins_text.textContent) == '0' + mins ) ) 
+        && ( parseInt(hrs_text.textContent) == hrs   || ( parseInt(hrs_text.textContent) == '0' + hrs ) )
+        ) {
+        clearInterval(timer_interval);
+        hrs_text.style.display = "none";
+        hrs_text.nextElementSibling.style.display = "none";
+
+        mins_text.style.display = "none";
+        mins_text.nextElementSibling.style.display = "none";
+
+        secs_text.style.display = "none";
+        secs_text.nextElementSibling.style.display = "none";
+
+        end_text.style.display = "inline";
+        end_text.textContent = "TIME UP!!";
+    }
+}
+
+let timer_interval = null;
+timer_start.onclick = () => {
+    timer_interval = setInterval(timer, 1000);
+    timer_start.setAttribute('disabled', '');
+    hours_input.setAttribute('disabled', '');
+    minutes_input.setAttribute('disabled', '');
+    secs_input.setAttribute('disabled', '');
+    timer_setter.children[0].setAttribute('disabled', '');
+    timer_setter.children[2].setAttribute('disabled', '');
+    timer_setter.children[3].setAttribute('disabled', '');
+    timer_setter.children[5].setAttribute('disabled', '');
+    timer_setter.children[6].setAttribute('disabled', '');
+    timer_setter.children[8].setAttribute('disabled', '');    
 }
 

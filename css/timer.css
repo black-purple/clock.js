@@ -13,6 +13,10 @@
     text-align: center;
     font-size: 4vw;
     color: white;
+    background-color: hsl(var(--act-clr)/.12);
+}
+#timer_setter input:disabled{
+    cursor: not-allowed;
     background-color: hsl(var(--act-clr)/.1);
 }
 #timer_setter input::-webkit-outer-spin-button,
@@ -27,11 +31,15 @@
     border: none;
     outline: none;
     padding: .5rem 1.5rem;
-    background-color: hsl(var(--sry-clr)/.1);
+    background-color: hsl(var(--sry-clr)/.12);
     color: white;
     font-weight: bolder;
     font-size: 4vh;
     cursor: pointer;
+}
+#timer_setter button:disabled{
+    cursor: not-allowed;
+    background-color: hsl(var(--sry-clr)/.1);
 }
 div#timer_setter button:nth-child(3n+1){
     border-bottom-left-radius: .5rem;
@@ -74,6 +82,10 @@ div#timer_setter button:active{
 #timer_control button:active{
     transform: scale(.95);
 }
+#timer_control button:first-child:disabled{
+    background-color: hsl(var(--sry-clr)/.1);
+    cursor: not-allowed;
+}
 #timer_control button:first-child{
     background-color: hsl(var(--sry-clr)/.8);
     margin-right: 1rem;
@@ -85,4 +97,7 @@ div#timer_setter button:active{
 #mins,
 #secs{
     color: hsl(var(--sry-clr));
+}
+#timer_text{
+    animation: fadein .5s ease-out;
 }
