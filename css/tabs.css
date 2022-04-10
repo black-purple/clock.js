@@ -57,4 +57,7 @@
 
 .tabs input[type="radio"]:checked + label {
     color: hsl(var(--sry-clr));
+    border-top: .2rem solid hsl(var(--sry-clr));
+    background-image: linear-gradient(0deg, transparent, hsl(var(--sry-clr)/.05));
+    text-shadow: 0 0 .3rem hsl(var(--sry-clr));
 }

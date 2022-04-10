@@ -18,7 +18,7 @@ body{
     animation: fadein .5s ease-out;
 }
 #time{
-    margin-top: 1.5rem;
+    margin-top: rem;
     display: flex;
     justify-content: center;
     align-items: center;
