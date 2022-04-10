@@ -1,0 +1,88 @@
+@import url(./vars.css);
+
+#timer_setter{
+    display: flex;
+    justify-content: space-between;
+    animation: fadein .5s ease-out;
+    -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
+}
+#timer_setter input{
+    border: none;
+    outline: none;
+    width: fit-content;
+    text-align: center;
+    font-size: 4vw;
+    color: white;
+    background-color: hsl(var(--act-clr)/.1);
+}
+#timer_setter input::-webkit-outer-spin-button,
+#timer_setter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#timer_setter input[type=number] {
+  -moz-appearance: textfield;
+}
+#timer_setter button{
+    border: none;
+    outline: none;
+    padding: .5rem 1.5rem;
+    background-color: hsl(var(--sry-clr)/.1);
+    color: white;
+    font-weight: bolder;
+    font-size: 4vh;
+    cursor: pointer;
+}
+div#timer_setter button:nth-child(3n+1){
+    border-bottom-left-radius: .5rem;
+    border-top-left-radius: .5rem;
+    margin-left: .2rem;
+}
+div#timer_setter button:nth-child(3n){
+    border-bottom-right-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+div#timer_setter button:active{
+    transform: scale(.95);
+}
+.timer_tab{
+    display: flex;
+    flex-flow: column;
+}
+#timer_text{
+    margin-top: 5rem;
+    color: white;
+    animation: fadein .5s ease-out;
+    font-size: 2rem;
+}
+
+#timer_control{
+    margin-top: 4rem;
+    -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
+}
+#timer_control button{
+    border: none;
+    outline: none;
+    padding: .5rem 1.5rem;
+    color: white;
+    font-weight: bolder;
+    font-size: 4vh;
+    cursor: pointer;
+    border-radius: .5rem;
+    animation: fadein .5s ease-out;
+}
+#timer_control button:active{
+    transform: scale(.95);
+}
+#timer_control button:first-child{
+    background-color: hsl(var(--sry-clr)/.8);
+    margin-right: 1rem;
+}
+#timer_control button:last-child{
+    background-color: hsl(var(--act-clr)/.8);
+}
+#hours,
+#mins,
+#secs{
+    color: hsl(var(--sry-clr));
+}

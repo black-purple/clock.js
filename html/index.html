@@ -7,16 +7,18 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/clocks.css">
     <link rel="stylesheet" href="../css/tabs.css">
+    <link rel="stylesheet" href="../css/clocks.css">
+    <link rel="stylesheet" href="../css/timer.css">
+    <link rel="stylesheet" href="../css/stopwatch.css">
     <!-- Scripts -->
     <script src="../js/digital_clock.js"></script>
     <title>CLOCK</title>
 </head>
 <body>
-    <div class="mytabs">
+    <div class="tabs">
         <!-- Clock tab -->
-        <input type="radio" id="clock_tab" name="tabs" checked>
+        <input type="radio" id="clock_tab" name="tabs">
         <label for="clock_tab">Clock</label>
         <div class="tab">
             <h2 class="phrase">The time now is </h2>
@@ -45,20 +47,50 @@
         </div>
         
         <!-- Timer tab -->
-        <input type="radio" id="timer_tab" name="tabs">
+        <input type="radio" id="timer_tab" name="tabs" checked>
         <label for="timer_tab">Timer</label>
-        <div class="tab">
-            <h2>Under construction</h2>
+        <div class="tab timer_tab">
+            <h2>Set Timer</h2>
+            <div id="timer_setter">
+                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
+                <input type="number" min="0" max="24" value="00" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
+                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
+                
+                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
+                <input type="number" min="0" max="60" value="00" title="use buttons or up and down keys on your keyboard to change number">
+                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
+                
+                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
+                <input type="number" min="0" max="60" value="00" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
+                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
+            </div>
+
+            <div id="timer_text">
+                <span id="hours">00</span><span>H</span>
+                <span id="mins">00</span><span>M</span>
+                <span id="secs">00</span><span>S</span>
+                <span id="end"></span>
+            </div>
+
+            <div id="timer_control">
+                <button type="button" id="timer_start">Start</button>
+                <button type="button" id="timer_reset">Reset</button>
+            </div>
         </div>
         
         <!-- Stopwatch tab -->
         <input type="radio" id="stopwatch_tab" name="tabs">
         <label for="stopwatch_tab">Stopwatch</label>
-        <div class="tab">
+        <div class="tab stopwatch_tab">
             <h2>Under construction</h2>
+            <h3>Coming Soon</h3>
+            <div class="circle">
+                <div></div>
+            </div>
         </div>
     </div>
 </body>
 <script src="../js/analog_clock.js"></script>
 <script src="../js/clock_toggle.js"></script>
+<script src="../js/timer_controller.js"></script>
 </html>

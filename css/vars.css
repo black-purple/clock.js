@@ -7,7 +7,7 @@
 }
 @keyframes fadein{
     from{
-        opacity: 0.01;
+        opacity: 0;
         transform: scale(0.8);
     }
     to{

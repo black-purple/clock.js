@@ -1,32 +1,32 @@
-@import url(../css/vars.css);
+@import url(./vars.css);
 
-.mytabs {
+.tabs {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     letter-spacing: .3rem;
+    justify-content: center;
 }
-.mytabs input[type="radio"] {
+.tabs input[type="radio"] {
     display: none;
 }
-.mytabs label {
+.tabs label {
     padding: 2rem;
     background-color: hsl(var(--pry-clr));
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transform: scale(1);
 }
-.mytabs label:hover {
+.tabs label:hover {
     color: hsl(var(--sry-clr)/.5);
     background-color: hsl(var(--sry-clr)/.05);
 }
-.mytabs label:active{
+.tabs label:active{
     transform: scale(0.95);
 } 
-.mytabs .tab {
+.tabs .tab {
     width: 100vw;
     height: 100%;
     padding: 20vh 20vw;
@@ -34,7 +34,7 @@
     order: 1;
     display: none;
 }
-.mytabs .tab h2 {
+.tabs .tab h2,  .tabs .tab h3{
     color: white;
     position: absolute;
     top: 20%;
@@ -44,13 +44,17 @@
     text-transform: uppercase;
     letter-spacing: .3em;
     font-size: 2em;
+    animation: fadein .5s ease-out;
 }
-.mytabs input[type='radio']:checked + label + .tab {
+.tabs .tab h3{
+    top: 30%;
+}
+.tabs input[type='radio']:checked + label + .tab {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.mytabs input[type="radio"]:checked + label {
+.tabs input[type="radio"]:checked + label {
     color: hsl(var(--sry-clr));
 }
