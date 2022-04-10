@@ -1,7 +1,7 @@
 
 
 function clock() {
-    let time_values = document.querySelectorAll('.time_value');
+    const time_values = document.querySelectorAll('.time_value');
     let d = new Date();
     let h = d.getHours();
     let m = d.getMinutes();
@@ -16,4 +16,4 @@ function clock() {
     time_values[2].textContent = s;
 }
 
-var interval = setInterval(clock, 500);
+setInterval(clock, 500);

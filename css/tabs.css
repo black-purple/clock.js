@@ -36,8 +36,15 @@
 }
 .mytabs .tab h2 {
     color: white;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: 2em;
 }
-
 .mytabs input[type='radio']:checked + label + .tab {
     display: flex;
     justify-content: center;
