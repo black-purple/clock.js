@@ -214,7 +214,7 @@ deadlines[8].onclick = () => {
 timer_start.onclick = () => {
     let deadline = new Date(
         Date.parse(new Date()) + (parseInt(hours_input.value) == 0 ? 1 : parseInt(hours_input.value) * 60) * (parseInt(minutes_input.value) == 0 ? 1 * 60 : parseInt(minutes_input.value) * 60) * (parseInt(secs_input.value) == 0 ? 1 : parseInt(secs_input.value)) * 1000);
-    initializeClock('timer_text', deadline6);
+    initializeClock('timer_text', deadline);
     timer_start.setAttribute('disabled', '');
     hours_input.setAttribute('disabled', '');
     minutes_input.setAttribute('disabled', '');
