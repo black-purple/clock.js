@@ -125,3 +125,6 @@ div#timer_setter button:active{
 .deadline + .deadline{
     margin-left: .1rem;
 }
+audio{
+    display: none;
+}

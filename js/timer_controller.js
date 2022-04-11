@@ -131,11 +131,12 @@ let hrs = hours_input.value == 0
 let mins = minutes_input.value == 0 
     ? 1 
     : minutes_input.value;
-let secs = secs_input.value == 0 
+    let secs = secs_input.value == 0 
     ? 1 
     : secs_input.value;
     
 let timeinterval = null;
+const audio = document.querySelector("audio");
 function initializeClock(id, endtime) {
         const clock = document.getElementById(id);
         const hoursSpan = clock.querySelector('.hours');
@@ -150,6 +151,7 @@ function initializeClock(id, endtime) {
         secondsSpan.textContent = ('0' + t.seconds).slice(-2);
 
         if (t.total <= 0) {
+            audio.play();
             clearInterval(timeinterval);
             hrs_text.style.display = "none";
             hrs_text.nextElementSibling.style.display = "none";
@@ -170,7 +172,6 @@ function initializeClock(id, endtime) {
 
 
 const deadlines = document.querySelectorAll('.deadline');
-
 deadlines[0].onclick = () => {
     let deadline1 = new Date(Date.parse(new Date()) + 60 * 60 * 1 * 1000); // 1h
     initializeClock('timer_text', deadline1);
