@@ -1,6 +1,7 @@
 @import url(./vars.css);
 
 #timer_setter{
+    margin-top: -2rem;
     display: flex;
     justify-content: space-between;
     animation: fadein .5s ease-out;
@@ -58,14 +59,14 @@ div#timer_setter button:active{
     flex-flow: column;
 }
 #timer_text{
-    margin-top: 5rem;
+    margin-top: 2rem;
     color: white;
     animation: fadein .5s ease-out;
     font-size: 2rem;
 }
 
 #timer_control{
-    margin-top: 4rem;
+    margin-top: 2rem;
     -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
 }
 #timer_control button{
@@ -76,7 +77,7 @@ div#timer_setter button:active{
     font-weight: bolder;
     font-size: 4vh;
     cursor: pointer;
-    border-radius: .5rem;
+    border-radius: .2em;
     animation: fadein .5s ease-out;
 }
 #timer_control button:active{
@@ -100,4 +101,26 @@ div#timer_setter button:active{
 }
 #timer_text{
     animation: fadein .5s ease-out;
+}
+#custom_deadlines{
+    background-color: hsl(var(--sry-clr)/.5);
+    padding: 1rem;
+    margin-top: 2.5rem;
+    border-radius: .3rem;
+    display: flex;
+}
+#custom_deadlines .deadline{
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: bolder;
+    font-size: 2.5vh;
+    cursor: pointer;
+    border-radius: .2em;
+    animation: fadein .5s ease-out;
+    background-color: #000000cd;
+}
+.deadline + .deadline{
+    margin-left: .1rem;
 }

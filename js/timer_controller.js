@@ -167,12 +167,39 @@ function initializeClock(id, endtime) {
     updateClock();
     timeinterval = setInterval(updateClock, 1000);
 }
+
+
+const deadlines = document.querySelectorAll('.deadline');
+
+deadlines[0].onclick = () => {
+    let deadline1 = new Date(Date.parse(new Date()) + 60 * 60 * 1 * 1000); // 1h
+    initializeClock('timer_text', deadline1);
+}
+deadlines[1].onclick = () => {
+    let deadline2 = new Date(Date.parse(new Date()) + 60 * 120 * 1 * 1000); // 2h
+    initializeClock('timer_text', deadline2);
+}
+deadlines[2].onclick = () => {
+    let deadline3 = new Date(Date.parse(new Date()) + 1 * 15 * 60 * 1000); // 15min
+    initializeClock('timer_text', deadline3);
+}
+deadlines[3].onclick = () => {
+    let deadline4 = new Date(Date.parse(new Date()) + 1 * 30 * 60 * 1000); // 30min
+    initializeClock('timer_text', deadline4);
+}
+deadlines[4].onclick = () => {
+    let deadline5 = new Date(Date.parse(new Date()) + 1 * 45 * 60 * 1000); // 45min
+    initializeClock('timer_text', deadline5);
+}
+deadlines[5].onclick = () => {
+    let deadline6 = new Date(Date.parse(new Date()) + 1 * 1 * 30 * 1000); // 30sec
+    initializeClock('timer_text', deadline6);
+}
+
 timer_start.onclick = () => {
     let deadline = new Date(
         Date.parse(new Date()) + (parseInt(hours_input.value) == 0 ? 1 : parseInt(hours_input.value) * 60) * (parseInt(minutes_input.value) == 0 ? 1 * 60 : parseInt(minutes_input.value) * 60) * (parseInt(secs_input.value) == 0 ? 1 : parseInt(secs_input.value)) * 1000);
-    let deadline1 = new Date(
-        Date.parse(new Date()) + 60 * 60 * 1 * 1000);
-    initializeClock('timer_text', deadline);
+    initializeClock('timer_text', deadline6);
     timer_start.setAttribute('disabled', '');
     hours_input.setAttribute('disabled', '');
     minutes_input.setAttribute('disabled', '');
