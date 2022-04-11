@@ -121,6 +121,7 @@ div#timer_setter button:active{
     border-radius: .2em;
     animation: fadein .5s ease-out;
     background-color: #000000cd;
+    flex-wrap: wrap;
 }
 .deadline + .deadline{
     margin-left: .1rem;

@@ -173,29 +173,43 @@ function initializeClock(id, endtime) {
 
 const deadlines = document.querySelectorAll('.deadline');
 deadlines[0].onclick = () => {
-    let deadline1 = new Date(Date.parse(new Date()) + 60 * 60 * 1 * 1000); // 1h
-    initializeClock('timer_text', deadline1);
+    let deadline = new Date(Date.parse(new Date()) + 60 * 120 * 1 * 1000); // 2h
+    initializeClock('timer_text', deadline);
 }
 deadlines[1].onclick = () => {
-    let deadline2 = new Date(Date.parse(new Date()) + 60 * 120 * 1 * 1000); // 2h
-    initializeClock('timer_text', deadline2);
+    let deadline = new Date(Date.parse(new Date()) + 60 * 60 * 1 * 1000); // 1h
+    initializeClock('timer_text', deadline);
 }
 deadlines[2].onclick = () => {
-    let deadline3 = new Date(Date.parse(new Date()) + 1 * 15 * 60 * 1000); // 15min
-    initializeClock('timer_text', deadline3);
+    let deadline = new Date(Date.parse(new Date()) + 1 * 45 * 60 * 1000); // 45min
+    initializeClock('timer_text', deadline);
 }
 deadlines[3].onclick = () => {
-    let deadline4 = new Date(Date.parse(new Date()) + 1 * 30 * 60 * 1000); // 30min
-    initializeClock('timer_text', deadline4);
+    let deadline = new Date(Date.parse(new Date()) + 1 * 30 * 60 * 1000); // 30min
+    initializeClock('timer_text', deadline);
 }
 deadlines[4].onclick = () => {
-    let deadline5 = new Date(Date.parse(new Date()) + 1 * 45 * 60 * 1000); // 45min
-    initializeClock('timer_text', deadline5);
+    let deadline = new Date(Date.parse(new Date()) + 1 * 15 * 60 * 1000); // 15min
+    initializeClock('timer_text', deadline);
 }
 deadlines[5].onclick = () => {
-    let deadline6 = new Date(Date.parse(new Date()) + 1 * 1 * 30 * 1000); // 30sec
-    initializeClock('timer_text', deadline6);
+    let deadline = new Date(Date.parse(new Date()) + 1 * 10 * 60 * 1000); // 10min
+    initializeClock('timer_text', deadline);
 }
+deadlines[6].onclick = () => {
+    let deadline = new Date(Date.parse(new Date()) + 1 * 5 * 60 * 1000); // 5min
+    initializeClock('timer_text', deadline);
+}
+deadlines[7].onclick = () => {
+    let deadline = new Date(Date.parse(new Date()) + 1 * 1 * 60 * 1000); // 1min
+    initializeClock('timer_text', deadline);
+}
+deadlines[8].onclick = () => {
+    let deadline = new Date(Date.parse(new Date()) + 1 * 1 * 30 * 1000); // 30sec
+    initializeClock('timer_text', deadline);
+}
+
+
 
 timer_start.onclick = () => {
     let deadline = new Date(
