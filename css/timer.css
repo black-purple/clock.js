@@ -129,3 +129,7 @@ div#timer_setter button:active{
 audio{
     display: none;
 }
+#custom_deadlines .deadline:disabled{
+    color: darkgray;
+    cursor: not-allowed;
+}
