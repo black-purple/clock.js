@@ -30,7 +30,7 @@
 .tabs .tab {
     width: 100vw;
     height: 100%;
-    padding: 20vh 20vw;
+    padding: 5vh 20vw;
     background-color: hsl(var(--pry-clr));
     order: 1;
     display: none;

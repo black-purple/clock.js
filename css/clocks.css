@@ -15,6 +15,7 @@ body{
 #digital_clock{
     cursor: pointer;
     animation: fadein .5s ease-out;
+    margin-top: 5rem;
 }
 #time{
     margin-top: 6rem;
@@ -80,8 +81,8 @@ body{
     border-radius: 50%;
     position: relative;
     padding: 1rem;
+    margin-top: 7rem;
     -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
-
 }
 
 .outer-clock-face {

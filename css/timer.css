@@ -1,7 +1,7 @@
 @import url(./vars.css);
 
 #timer_setter{
-    margin-top: -2rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: space-between;
     animation: fadein .5s ease-out;
@@ -72,7 +72,7 @@ div#timer_setter button:active{
 #timer_control button{
     border: none;
     outline: none;
-    padding: .5rem 1.5rem;
+    padding: .5rem 2rem;
     color: white;
     font-weight: bolder;
     font-size: 4vh;
@@ -94,13 +94,10 @@ div#timer_setter button:active{
 #timer_control button:last-child{
     background-color: hsl(var(--act-clr)/.8);
 }
-#hours,
-#mins,
-#secs{
+.hours,
+.minutes,
+.seconds{
     color: hsl(var(--sry-clr));
-}
-#timer_text{
-    animation: fadein .5s ease-out;
 }
 #custom_deadlines{
     background-color: hsl(var(--sry-clr)/.5);
@@ -122,6 +119,7 @@ div#timer_setter button:active{
     animation: fadein .5s ease-out;
     background-color: #000000cd;
     flex-wrap: wrap;
+    -webkit-box-reflect: below 1rem linear-gradient(transparent,#00000025);
 }
 .deadline + .deadline{
     margin-left: .1rem;
