@@ -108,7 +108,7 @@ timer_reset.onclick = () => {
     hours_input.removeAttribute('disabled');
     minutes_input.removeAttribute('disabled');
     secs_input.removeAttribute('disabled');
-
+    
     clearInterval(timeinterval);
 }
 function getTimeRemaining(endtime) {
@@ -118,49 +118,60 @@ function getTimeRemaining(endtime) {
     const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
     
     return {
-      total,
-      hours,
-      minutes,
-      seconds
+        total,
+        hours,
+        minutes,
+        seconds
     };
 }
+
+let hrs = hours_input.value == 0 
+    ? 1 
+    : hours_input.value;
+let mins = minutes_input.value == 0 
+    ? 1 
+    : minutes_input.value;
+let secs = secs_input.value == 0 
+    ? 1 
+    : secs_input.value;
+    
 let timeinterval = null;
 function initializeClock(id, endtime) {
-    const clock = document.getElementById(id);
-    const hoursSpan = clock.querySelector('.hours');
-    const minutesSpan = clock.querySelector('.minutes');
-    const secondsSpan = clock.querySelector('.seconds');
+        const clock = document.getElementById(id);
+        const hoursSpan = clock.querySelector('.hours');
+        const minutesSpan = clock.querySelector('.minutes');
+        const secondsSpan = clock.querySelector('.seconds');
 
     function updateClock() {
-      const t = getTimeRemaining(endtime);
-
-      hoursSpan.textContent = ('0' + t.hours).slice(-2);
-      minutesSpan.textContent = ('0' + t.minutes).slice(-2);
-      secondsSpan.textContent = ('0' + t.seconds).slice(-2);
-
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-        hrs_text.style.display = "none";
-        hrs_text.nextElementSibling.style.display = "none";
+        const t = getTimeRemaining(endtime);
         
-        mins_text.style.display = "none";
-        mins_text.nextElementSibling.style.display = "none";
+        hoursSpan.textContent = ('0' + t.hours).slice(-2);
+        minutesSpan.textContent = ('0' + t.minutes).slice(-2);
+        secondsSpan.textContent = ('0' + t.seconds).slice(-2);
 
-        secs_text.style.display = "none";
-        secs_text.nextElementSibling.style.display = "none";
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+            hrs_text.style.display = "none";
+            hrs_text.nextElementSibling.style.display = "none";
+            
+            mins_text.style.display = "none";
+            mins_text.nextElementSibling.style.display = "none";
 
-        end_text.style.display = "inline";
-      }
+            secs_text.style.display = "none";
+            secs_text.nextElementSibling.style.display = "none";
+            
+            end_text.style.display = "inline";
+        }
     }
-
+    
     updateClock();
     timeinterval = setInterval(updateClock, 1000);
 }
-let hrs = 1;
-let mins = 1;
-let secs = 15;
-const deadline = new Date(Date.parse(new Date()) + (hrs) * (mins) * (secs) * 1000);
 timer_start.onclick = () => {
+    let deadline = new Date(
+        Date.parse(new Date()) + (parseInt(hours_input.value) == 0 ? 1 : parseInt(hours_input.value) * 60) * (parseInt(minutes_input.value) == 0 ? 1 * 60 : parseInt(minutes_input.value) * 60) * (parseInt(secs_input.value) == 0 ? 1 : parseInt(secs_input.value)) * 1000);
+    let deadline1 = new Date(
+        Date.parse(new Date()) + 60 * 60 * 1 * 1000);
     initializeClock('timer_text', deadline);
     timer_start.setAttribute('disabled', '');
     hours_input.setAttribute('disabled', '');

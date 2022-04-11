@@ -8,15 +8,16 @@
     font-weight: 300;
     letter-spacing: .3rem;
     justify-content: center;
+    box-sizing: border-box;
 }
 .tabs input[type="radio"] {
     display: none;
 }
 .tabs label {
+    box-sizing: border-box;
     padding: 2rem;
     background-color: hsl(var(--pry-clr));
     color: white;
-    font-weight: bold;
     cursor: pointer;
 }
 .tabs label:hover {
