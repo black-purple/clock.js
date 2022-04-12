@@ -16,10 +16,10 @@
         <script src="../js/digital_clock.js"></script>
         <title>CLOCK</title>
     </head>
-    <body>
-        <div class="tabs">
+<body>
+    <div class="tabs">
         <!-- Clock tab -->
-        <input type="radio" id="clock_tab" name="tabs" checked>
+        <input type="radio" id="clock_tab" name="tabs">
         <label for="clock_tab">Clock</label>
         <div class="tab">
             <h2 class="phrase">Current time is </h2>
@@ -80,8 +80,8 @@
             </div>
             
             <div id="timer_control">
-                <button type="button" id="timer_start">Start</button>
-                <button type="button" id="timer_reset">Reset</button>
+                <button type="button" id="timer_start">START</button>
+                <button type="button" id="timer_reset">RESET</button>
             </div>
             
             <div id="custom_deadlines">
@@ -108,18 +108,37 @@
         </div>
         
         <!-- Stopwatch tab -->
-        <input type="radio" id="stopwatch_tab" name="tabs">
+        <input type="radio" id="stopwatch_tab" name="tabs" checked>
         <label for="stopwatch_tab">Stopwatch</label>
         <div class="tab stopwatch_tab">
-            <h2>Under construction</h2>
-            <h3>Coming Soon</h3>
-            <div class="circle">
-                <div></div>
+            <div id="stopwatch_text">
+                <span id="sw_mins" class="minutes">00</span><span>M</span>
+                <span id="sw_secs" class="seconds">00</span><span>S</span>
+                <span id="sw_msecs" class="seconds">00</span><span>MS</span>
             </div>
+
+            <div id="stopwatch_control">
+                <button type="button" id="sw_start">START</button>
+                <button type="button" id="sw_stop">&nbsp;STOP&nbsp;</button>
+                <button type="button" id="sw_lap" disabled>&nbsp; LAP &nbsp;</button>
+                <button type="button" id="sw_reset">RESET</button>
+            </div>
+
+            <div id="laps">
+            </div>
+
+            <div class="dropdown">
+                <span class="help">&quest;</span>
+                <div class="dropdown-content hint">
+                    <p class="hint">The stopwatch will keep running even if you switch tabs</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
 <script src="../js/analog_clock.js"></script>
 <script src="../js/clock_toggle.js"></script>
 <script src="../js/timer_controller.js"></script>
+<script src="../js/stopwatch.js"></script>
 </html>
