@@ -64,10 +64,11 @@ function startTimer () {
     if (tens < 10)sw_msecs.textContent = '0' + tens;
     if (tens > 9)sw_msecs.textContent = tens; 
     if (tens > 99) {
-      seconds++;
-      sw_secs.textContent = seconds < 10 ? '0' + seconds : seconds;
-      tens = 0;
-      sw_msecs.textContent = '00';
+        console.log(seconds);
+        seconds++;
+        sw_secs.textContent = seconds < 10 ? '0' + seconds : seconds;
+        tens = 0;
+        sw_msecs.textContent = '00';
     }
     if (seconds > 60)sw_msecs.textContent = seconds;  
  }

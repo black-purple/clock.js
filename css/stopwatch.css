@@ -39,8 +39,8 @@
 #stopwatch_control{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 3rem;
+    justify-content: space-around;
+    margin-top: 4rem;
     -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
 }
 #stopwatch_control button{
@@ -59,6 +59,7 @@
 #stopwatch_control #sw_start:disabled{
     background-color: hsl(var(--sry-clr)/.1);
     cursor: not-allowed;
+    color: gray;
 }
 #stopwatch_control #sw_start{
     background-color: hsl(var(--sry-clr)/.8);

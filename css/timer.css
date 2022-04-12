@@ -19,6 +19,7 @@
 #timer_setter input:disabled{
     cursor: not-allowed;
     background-color: hsl(var(--act-clr)/.1);
+    color: gray;
 }
 #timer_setter input::-webkit-outer-spin-button,
 #timer_setter input::-webkit-inner-spin-button {
@@ -41,6 +42,7 @@
 #timer_setter button:disabled{
     cursor: not-allowed;
     background-color: hsl(var(--sry-clr)/.1);
+    color: gray;
 }
 div#timer_setter button:nth-child(3n+1){
     border-bottom-left-radius: .5rem;
@@ -86,6 +88,7 @@ div#timer_setter button:active{
 #timer_control button:first-child:disabled{
     background-color: hsl(var(--sry-clr)/.1);
     cursor: not-allowed;
+    color: gray;
 }
 #timer_control button:first-child{
     background-color: hsl(var(--sry-clr)/.8);
