@@ -56,7 +56,7 @@ sw_lap.onclick = () => {
     
     lap_div.appendChild(lap_index_span);
     lap_div.appendChild(lap_time_span);
-    laps.prepend(lap_div);
+    laps.appendChild(lap_div);
     lap_index++;
 }
 function startSw () {
