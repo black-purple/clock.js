@@ -6,9 +6,10 @@
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     justify-content: center;
     box-sizing: border-box;
+    height: 90vh;
 }
 .tabs input[type="radio"] {
     display: none;
@@ -16,6 +17,7 @@
 .tabs label {
     box-sizing: border-box;
     padding: 2rem;
+    height: 10vh;
     background-color: hsl(var(--pry-clr));
     color: white;
     cursor: pointer;
@@ -49,7 +51,7 @@
 .tabs .tab h2{
     top: 15%;
 }
-.tabs .tab h3{
+.tabs .tab:first-of-type h2{
     top: 30%;
 }
 .tabs input[type='radio']:checked + label + .tab {

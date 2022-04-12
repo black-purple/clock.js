@@ -18,15 +18,15 @@ sw_start.onclick = () => {
     sw_lap.style.display = 'inline';
     sw_reset.style.display = 'none';
     sw_lap.removeAttribute('disabled');
-    interval = setInterval(startTimer, 10);}
+    interval = setInterval(startSw, 10);}
     clearInterval(interval);
-    sw_stop.onclick = () => {
-        sw_start.style.display = 'inline';
-        sw_stop.style.display = 'none';
-        sw_lap.style.display = 'none';
-        sw_reset.style.display = 'inline';
-        sw_start.setAttribute('disabled', '');
-        clearInterval(interval);
+sw_stop.onclick = () => {
+    sw_start.style.display = 'inline';
+    sw_stop.style.display = 'none';
+    sw_lap.style.display = 'none';
+    sw_reset.style.display = 'inline';
+    sw_start.setAttribute('disabled', '');
+    clearInterval(interval);
 }
 sw_reset.onclick = () => {
     sw_lap.style.display = 'inline';
@@ -53,13 +53,13 @@ sw_lap.onclick = () => {
     lap_div.setAttribute('class', 'lap');
     lap_index_span.textContent = lap_index < 10 ? '0' + lap_index : lap_index;
     lap_time_span.textContent = `${sw_mins.textContent}:${sw_secs.textContent}:${sw_msecs.textContent}`;
-
+    
     lap_div.appendChild(lap_index_span);
     lap_div.appendChild(lap_time_span);
-    laps.appendChild(lap_div);
+    laps.prepend(lap_div);
     lap_index++;
 }
-function startTimer () {
+function startSw () {
     tens++; 
     if (tens < 10)sw_msecs.textContent = '0' + tens;
     if (tens > 9)sw_msecs.textContent = tens; 

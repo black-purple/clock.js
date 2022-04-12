@@ -5,6 +5,9 @@
     --sry-clr:207 90% 54%;
     --act-clr:335 100% 50%;
 }
+body{
+    background-color: hsl(var(--pry-clr));
+}
 @keyframes fadein{
     from{
         opacity: 0;

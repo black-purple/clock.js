@@ -15,10 +15,9 @@ body{
 #digital_clock{
     cursor: pointer;
     animation: fadein .5s ease-out;
-    margin-top: 5rem;
 }
 #time{
-    margin-top: 6rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
