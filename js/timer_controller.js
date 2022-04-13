@@ -210,7 +210,7 @@ function resetContent(){
     clearInterval(timeinterval);
 }
     
-timer_reset.onclick = resetContent();
+timer_reset.onclick = resetContent;
 
 deadlines[0].onclick = () => {
     let deadline = new Date(Date.parse(new Date()) + 60 * 120 * 1 * 1000); // 2h
