@@ -24,7 +24,7 @@ Clock web app  made using basic web techmologies.
 
 # Live Demo
 
-***NOTE: This project is hosted on [GitHub Pages](https://pages.github.com/)***
+***NOTE: This project is hosted on [Vercel](https://vercel.com/)***
 
 Click [here](https://clockjs.vercel.app) to see the code in action.
 
