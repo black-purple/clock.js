@@ -76,53 +76,6 @@ timer_setter.children[8].onclick = () => {
     secs_input.value = value;
 }
 
-// Reset
-function resetContent(){
-    hours_input.value = 0;
-    minutes_input.value = 0;
-    secs_input.value = 0;
-    hrs_text.textContent = '00'; 
-    mins_text.textContent = '00'; 
-    secs_text.textContent = '00'; 
-    secs = 0;
-    mins = 0;
-    hrs = 0;
-    hrs_text.style.display = "inline";
-    hrs_text.nextElementSibling.style.display = "inline";
-    
-    mins_text.style.display = "inline";
-    mins_text.nextElementSibling.style.display = "inline";
-
-    secs_text.style.display = "inline";
-    secs_text.nextElementSibling.style.display = "inline";
-
-    timer_start.removeAttribute('disabled');
-    timer_setter.children[0].removeAttribute('disabled');
-    timer_setter.children[2].removeAttribute('disabled');
-    timer_setter.children[3].removeAttribute('disabled');
-    timer_setter.children[5].removeAttribute('disabled');
-    timer_setter.children[6].removeAttribute('disabled');
-    timer_setter.children[8].removeAttribute('disabled');
-    hours_input.removeAttribute('disabled');
-    minutes_input.removeAttribute('disabled');
-    secs_input.removeAttribute('disabled');
-    
-    deadlines[0].removeAttribute('disabled');
-    deadlines[1].removeAttribute('disabled');
-    deadlines[2].removeAttribute('disabled');
-    deadlines[3].removeAttribute('disabled');
-    deadlines[4].removeAttribute('disabled');
-    deadlines[5].removeAttribute('disabled');
-    deadlines[6].removeAttribute('disabled');
-    deadlines[7].removeAttribute('disabled');
-    deadlines[8].removeAttribute('disabled');
-    clearInterval(timeinterval);
-}
-
-timer_reset.onclick = () => {
-    resetContent();
-}
-
 function disableContent(){
     timer_start.setAttribute('disabled', '');
     hours_input.setAttribute('disabled', '');
@@ -165,24 +118,30 @@ let hrs = hours_input.value == 0
 let mins = minutes_input.value == 0 
     ? 1 
     : minutes_input.value;
-    let secs = secs_input.value == 0 
+let secs = secs_input.value == 0 
     ? 1 
     : secs_input.value;
 
+function beepScreen(stop_beep){
+    const beep = document.querySelector("audio");
+    const modal = document.querySelector('#modalBody');
+    const closeModal = document.querySelector('#closeModal');
+    beep.volume = 0.5;
+    beep.loop = true;
+    if (stop_beep){
+        closeModal.parentElement.style.display = "none";
+        beep.pause();
+        beep.currentTime = 0;    
+    }else{
+        beep.play();
+        modal.style.display = "flex";
+    }
+}
 
 let timeinterval = null;
 
-const beep = document.querySelector("audio");
-beep.volume = 0.5;
-beep.loop = true;
-
-const modal = document.querySelector('#modalBody');
-const closeModal = document.querySelector('#closeModal');
-
 closeModal.onclick = () => {
-    closeModal.parentElement.style.display = "none";
-    beep.pause();
-    beep.currentTime = 0;
+    beepScreen(true);
     resetContent();
 }
 
@@ -200,9 +159,8 @@ function initializeClock(id, endtime) {
         seconds_div.textContent = ('0' + t.seconds).slice(-2);
 
         if (t.total <= 0) {
-            beep.play();
+            beepScreen();
             clearInterval(timeinterval);
-            modal.style.display = "flex";
         }
     }
     
@@ -210,7 +168,49 @@ function initializeClock(id, endtime) {
     timeinterval = setInterval(updateClock, 1000);
 }
 
+function resetContent(){
+    hours_input.value = 0;
+    minutes_input.value = 0;
+    secs_input.value = 0;
+    hrs_text.textContent = '00'; 
+    mins_text.textContent = '00'; 
+    secs_text.textContent = '00'; 
+    secs = 0;
+    mins = 0;
+    hrs = 0;
+    hrs_text.style.display = "inline";
+    hrs_text.nextElementSibling.style.display = "inline";
+    
+    mins_text.style.display = "inline";
+    mins_text.nextElementSibling.style.display = "inline";
 
+    secs_text.style.display = "inline";
+    secs_text.nextElementSibling.style.display = "inline";
+
+    timer_start.removeAttribute('disabled');
+    timer_setter.children[0].removeAttribute('disabled');
+    timer_setter.children[2].removeAttribute('disabled');
+    timer_setter.children[3].removeAttribute('disabled');
+    timer_setter.children[5].removeAttribute('disabled');
+    timer_setter.children[6].removeAttribute('disabled');
+    timer_setter.children[8].removeAttribute('disabled');
+    hours_input.removeAttribute('disabled');
+    minutes_input.removeAttribute('disabled');
+    secs_input.removeAttribute('disabled');
+    
+    deadlines[0].removeAttribute('disabled');
+    deadlines[1].removeAttribute('disabled');
+    deadlines[2].removeAttribute('disabled');
+    deadlines[3].removeAttribute('disabled');
+    deadlines[4].removeAttribute('disabled');
+    deadlines[5].removeAttribute('disabled');
+    deadlines[6].removeAttribute('disabled');
+    deadlines[7].removeAttribute('disabled');
+    deadlines[8].removeAttribute('disabled');
+    clearInterval(timeinterval);
+}
+    
+timer_reset.onclick = resetContent();
 
 deadlines[0].onclick = () => {
     let deadline = new Date(Date.parse(new Date()) + 60 * 120 * 1 * 1000); // 2h
