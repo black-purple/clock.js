@@ -26,5 +26,5 @@ Clock web app  made using basic web techmologies.
 
 ***NOTE: This project is hosted on [GitHub Pages](https://pages.github.com/)***
 
-Click [here](https://black-purple.github.io/clock.js/html/) to see the code in action.
+Click [here](https://clockjs.vercel.app) to see the code in action.
 
