@@ -10,9 +10,9 @@
 #timer_setter input{
     border: none;
     outline: none;
-    width: fit-content;
+    width: 6rem;
     text-align: center;
-    font-size: 3vw;
+    font-size: 3.5vw;
     color: white;
     background-color: hsl(var(--act-clr)/.12);
 }
