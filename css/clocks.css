@@ -70,8 +70,8 @@ body{
     display: none;
     cursor: pointer;
     animation: fadein .5s ease-out;
-    width: 20em;
-    height: 20em;
+    width: 20rem;
+    height: 20rem;
     border: .5rem solid hsl(var(--act-clr)/.2);
     box-shadow: -4px -4px 10px rgba(142, 142, 142, 0.5),
                   inset 4px 4px 10px rgba(0,0,0,0.5),

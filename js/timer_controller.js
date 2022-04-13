@@ -6,9 +6,6 @@ const secs_text = document.querySelector("#secs");
 const mins_text = document.querySelector("#mins");
 const hrs_text = document.querySelector("#hours");
 
-const end_text = document.querySelector("#end");
-end_text.style.display = 'none';
-
 const hours_input = timer_setter.children[1];
 const minutes_input = timer_setter.children[4];
 const secs_input = timer_setter.children[7];
@@ -80,7 +77,7 @@ timer_setter.children[8].onclick = () => {
 }
 
 // Reset
-timer_reset.onclick = () => {
+function resetContent(){
     hours_input.value = 0;
     minutes_input.value = 0;
     secs_input.value = 0;
@@ -99,7 +96,6 @@ timer_reset.onclick = () => {
     secs_text.style.display = "inline";
     secs_text.nextElementSibling.style.display = "inline";
 
-    end_text.style.display = "none";
     timer_start.removeAttribute('disabled');
     timer_setter.children[0].removeAttribute('disabled');
     timer_setter.children[2].removeAttribute('disabled');
@@ -121,6 +117,10 @@ timer_reset.onclick = () => {
     deadlines[7].removeAttribute('disabled');
     deadlines[8].removeAttribute('disabled');
     clearInterval(timeinterval);
+}
+
+timer_reset.onclick = () => {
+    resetContent();
 }
 
 function disableContent(){
@@ -168,9 +168,24 @@ let mins = minutes_input.value == 0
     let secs = secs_input.value == 0 
     ? 1 
     : secs_input.value;
-    
+
+
 let timeinterval = null;
-const audio = document.querySelector("audio");
+
+const beep = document.querySelector("audio");
+beep.volume = 0.5;
+beep.loop = true;
+
+const modal = document.querySelector('#modalBody');
+const closeModal = document.querySelector('#closeModal');
+
+closeModal.onclick = () => {
+    closeModal.parentElement.style.display = "none";
+    beep.pause();
+    beep.currentTime = 0;
+    resetContent();
+}
+
 function initializeClock(id, endtime) {
         const clock = document.getElementById(id);
         const hours_div = clock.querySelector('.hours');
@@ -185,24 +200,16 @@ function initializeClock(id, endtime) {
         seconds_div.textContent = ('0' + t.seconds).slice(-2);
 
         if (t.total <= 0) {
-            audio.play();
+            beep.play();
             clearInterval(timeinterval);
-            hrs_text.style.display = "none";
-            hrs_text.nextElementSibling.style.display = "none";
-            
-            mins_text.style.display = "none";
-            mins_text.nextElementSibling.style.display = "none";
-
-            secs_text.style.display = "none";
-            secs_text.nextElementSibling.style.display = "none";
-            
-            end_text.style.display = "inline";
+            modal.style.display = "flex";
         }
     }
     
     updateClock();
     timeinterval = setInterval(updateClock, 1000);
 }
+
 
 
 deadlines[0].onclick = () => {
@@ -251,11 +258,9 @@ deadlines[8].onclick = () => {
     disableContent();
 }
 
-
 timer_start.onclick = () => {
     let deadline = new Date(
-        Date.parse(new Date()) + (parseInt(hours_input.value) == 0 ? 1 : parseInt(hours_input.value) * 60) * (parseInt(minutes_input.value) == 0 ? 1 * 60 : parseInt(minutes_input.value) * 60) * (parseInt(secs_input.value) == 0 ? 1 : parseInt(secs_input.value)) * 1000);
+        Date.parse(new Date()) + (parseInt(hours_input.value) == 0 ? 1 : parseInt(hours_input.value) * 60) * (parseInt(minutes_input.value) == 0 ? 1 : parseInt(minutes_input.value) * 60) * (parseInt(secs_input.value) == 0 ? 1 : parseInt(secs_input.value)) * 1000);
     initializeClock('timer_text', deadline);
     disableContent();
 }
-
