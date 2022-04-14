@@ -152,13 +152,13 @@ function initializeClock(id, endtime) {
         const seconds_div = clock.querySelector('.seconds');
 
     function updateClock() {
-        const t = getTimeRemaining(endtime);
+        const {total, hours, minutes, seconds} = getTimeRemaining(endtime);
         
-        hours_div.textContent = ('0' + t.hours).slice(-2);
-        minutes_div.textContent = ('0' + t.minutes).slice(-2);
-        seconds_div.textContent = ('0' + t.seconds).slice(-2);
+        hours_div.textContent = ('0' + hours).slice(-2);
+        minutes_div.textContent = ('0' + minutes).slice(-2);
+        seconds_div.textContent = ('0' + seconds).slice(-2);
 
-        if (t.total <= 0) {
+        if (total <= 0) {
             beepScreen();
             clearInterval(timeinterval);
         }
