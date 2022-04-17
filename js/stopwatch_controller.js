@@ -10,8 +10,9 @@ const sw_reset = document.querySelector("#sw_reset");
 const laps = document.querySelector('#laps');
 
 let interval = null;
-let tens = 0;
+let msecs = 0;
 let seconds = 0;
+let minutes = 0;
 sw_start.onclick = () => {
     sw_start.style.display = 'none';
     sw_stop.style.display = 'inline';
@@ -40,8 +41,9 @@ sw_reset.onclick = () => {
     sw_secs.textContent = '00';
     sw_mins.textContent = '00';
     clearInterval(interval);
-    tens = 0;
+    msecs = 0;
     seconds = 0;
+    minutes = 0;
 }
 
 let lap_index = 1;
@@ -60,17 +62,21 @@ sw_lap.onclick = () => {
     lap_index++;
 }
 function startSw () {
-    tens++; 
-    if (tens < 10)sw_msecs.textContent = '0' + tens;
-    if (tens > 9)sw_msecs.textContent = tens; 
-    if (tens > 99) {
-        console.log(seconds);
+    msecs++;
+    console.log(msecs)
+    if (msecs < 10)sw_msecs.textContent = '0' + msecs;
+    if (msecs > 9)sw_msecs.textContent = msecs; 
+    if (msecs > 99) {
         seconds++;
         sw_secs.textContent = seconds < 10 ? '0' + seconds : seconds;
-        tens = 0;
+        msecs = 0;
         sw_msecs.textContent = '00';
     }
-    if (seconds > 60)sw_msecs.textContent = seconds;  
+    if (seconds > 59){
+        minutes++;
+        sw_mins.textContent = minutes < 10 ? '0' + minutes : minutes;
+        seconds = 0;
+    }
  }
   
 
