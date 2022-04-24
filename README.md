@@ -5,6 +5,8 @@ Clock web app  made using basic web techmologies.
 ![HTML](https://img.shields.io/static/v1?label=%20&message=HTML&color=%23E34F26&labelColor=%23ff000000&logo=HTML5)
 ![CSS](https://img.shields.io/static/v1?label=%20&message=CSS&color=%231572B6&labelColor=%23ff000000&logo=Css3&logoColor=%231572B6)
 ![javaScript](https://img.shields.io/static/v1?label=%20&message=JavaScript&color=%23F7DF1E&labelColor=%23ff000000&logo=javaScript)
+![jquery](https://img.shields.io/static/v1?label=%20&message=JQuery&color=%230769AD&labelColor=%23ff000000&logo=jquery)
+
 
 # Features
   * Clock
