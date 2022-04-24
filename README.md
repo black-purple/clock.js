@@ -1,6 +1,6 @@
 # Digital Clock
 
-Clock web app  made using basic web techmologies.
+Clock web app made using basic web techmologies.
 
 ![HTML](https://img.shields.io/static/v1?label=%20&message=HTML&color=%23E34F26&labelColor=%23ff000000&logo=HTML5)
 ![CSS](https://img.shields.io/static/v1?label=%20&message=CSS&color=%231572B6&labelColor=%23ff000000&logo=Css3&logoColor=%231572B6)
