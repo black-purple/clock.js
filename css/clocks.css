@@ -1,6 +1,6 @@
 @import url(./vars.css);
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,30 +8,35 @@
     user-select: none;
 }
 
-body{
+body {
     background-color: hsl(var(--pry-clr));
 }
+
 /* Digital Clock Styles */
-#digital_clock{
+#digital_clock {
     cursor: pointer;
     animation: fadein .5s ease-out;
 }
-#time{
+
+#time {
     margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#time div{
+
+#time div {
     position: relative;
     margin: 0 .2rem;
-    -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
+    -webkit-box-reflect: below .2rem linear-gradient(transparent, #00000025);
 }
-#time div span:first-child{
+
+#time div span:first-child {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
-#time div span{
+
+#time div span {
     position: relative;
     display: block;
     width: 100px;
@@ -46,7 +51,8 @@ body{
     z-index: 10;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
 }
-#time div span:nth-child(2){
+
+#time div span:nth-child(2) {
     height: 30px;
     font-size: 0.7em;
     letter-spacing: .2em;
@@ -56,10 +62,12 @@ body{
     background: hsl(var(--sry-clr)/.9);
     text-transform: uppercase;
 }
-#time div:last-child span{
+
+#time div:last-child span {
     background: hsl(var(--act-clr));
 }
-#time div:last-child span:nth-child(2){
+
+#time div:last-child span:nth-child(2) {
     background: hsl(var(--act-clr)/.9);
 }
 
@@ -74,14 +82,14 @@ body{
     height: 20rem;
     border: .5rem solid hsl(var(--act-clr)/.2);
     box-shadow: -4px -4px 10px rgba(142, 142, 142, 0.5),
-                  inset 4px 4px 10px rgba(0,0,0,0.5),
-                  inset -4px -4px 10px rgba(67,67,67,0.5),
-                  4px 4px 10px rgba(0,0,0,0.3);
+        inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+        inset -4px -4px 10px rgba(67, 67, 67, 0.5),
+        4px 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     position: relative;
     padding: 1rem;
     margin-top: 7rem;
-    -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
+    -webkit-box-reflect: below .2rem linear-gradient(transparent, #00000025);
 }
 
 .outer-clock-face {
@@ -101,7 +109,7 @@ body{
 
 .outer-clock-face::before,
 .outer-clock-face::after,
-.outer-clock-face .marking{
+.outer-clock-face .marking {
     content: '';
     position: absolute;
     width: 5px;
@@ -192,7 +200,7 @@ body{
 }
 
 .hand.second-hand {
-    background-color:hsl(var(--act-clr)) ;
+    background-color: hsl(var(--act-clr));
     width: 45%;
     height: 2px;
 }

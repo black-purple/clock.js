@@ -1,13 +1,14 @@
 @import url(./vars.css);
 
-.hint{
+.hint {
     padding: 1rem .5rem;
     color: white;
     bottom: .5rem;
     font-weight: bolder;
     font-size: small;
 }
-kbd{
+
+kbd {
     color: hsl(var(--sry-clr)/.5);
     font-weight: bold;
     padding: .5rem .5rem;
@@ -15,7 +16,8 @@ kbd{
     text-align: center;
     font-size: 2rem;
 }
-.help{
+
+.help {
     color: white;
     position: fixed;
     bottom: 2rem;
@@ -25,10 +27,12 @@ kbd{
     text-shadow: 0 0 1rem white;
     border-radius: 20%;
 }
-.help:hover{
+
+.help:hover {
     background-color: hsl(var(--sry-clr)/.1);
     cursor: pointer;
 }
+
 .dropdown {
     position: absolute;
     bottom: 0;
@@ -36,7 +40,7 @@ kbd{
     display: inline-block;
     color: white;
 }
-  
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -48,7 +52,7 @@ kbd{
     bottom: 2rem;
     z-index: 1;
 }
-  
+
 .dropdown:hover .dropdown-content {
     display: block;
 }

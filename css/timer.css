@@ -1,13 +1,14 @@
 @import url(./vars.css);
 
-#timer_setter{
+#timer_setter {
     margin-top: 5rem;
     display: flex;
     justify-content: space-between;
     animation: fadein .5s ease-out;
-    -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
+    -webkit-box-reflect: below .2rem linear-gradient(transparent, #00000025);
 }
-#timer_setter input{
+
+#timer_setter input {
     border: none;
     outline: none;
     width: 6rem;
@@ -16,20 +17,24 @@
     color: white;
     background-color: hsl(var(--act-clr)/.12);
 }
-#timer_setter input:disabled{
+
+#timer_setter input:disabled {
     cursor: not-allowed;
     background-color: hsl(var(--act-clr)/.1);
     color: gray;
 }
+
 #timer_setter input::-webkit-outer-spin-button,
 #timer_setter input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 #timer_setter input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
-#timer_setter button{
+
+#timer_setter button {
     border: none;
     outline: none;
     padding: .5rem 1.5rem;
@@ -39,39 +44,46 @@
     font-size: 4vh;
     cursor: pointer;
 }
-#timer_setter button:disabled{
+
+#timer_setter button:disabled {
     cursor: not-allowed;
     background-color: hsl(var(--sry-clr)/.1);
     color: gray;
 }
-div#timer_setter button:nth-child(3n+1){
+
+div#timer_setter button:nth-child(3n+1) {
     border-bottom-left-radius: .5rem;
     border-top-left-radius: .5rem;
     margin-left: .2rem;
 }
-div#timer_setter button:nth-child(3n){
+
+div#timer_setter button:nth-child(3n) {
     border-bottom-right-radius: .5rem;
     border-top-right-radius: .5rem;
 }
-div#timer_setter button:active{
+
+div#timer_setter button:active {
     transform: scale(.95);
 }
-.timer_tab{
+
+.timer_tab {
     display: flex;
     flex-flow: column;
 }
-#timer_text{
+
+#timer_text {
     margin-top: 3rem;
     color: white;
     animation: fadein .5s ease-out;
     font-size: 2rem;
 }
 
-#timer_control{
+#timer_control {
     margin-top: 3rem;
-    -webkit-box-reflect: below .2rem linear-gradient(transparent,#00000025);
+    -webkit-box-reflect: below .2rem linear-gradient(transparent, #00000025);
 }
-#timer_control button{
+
+#timer_control button {
     border: none;
     outline: none;
     padding: .5rem 2rem;
@@ -82,27 +94,33 @@ div#timer_setter button:active{
     border-radius: .2em;
     animation: fadein .5s ease-out;
 }
-#timer_control button:active{
+
+#timer_control button:active {
     transform: scale(.95);
 }
-#timer_control button:first-child:disabled{
+
+#timer_control button:first-child:disabled {
     background-color: hsl(var(--sry-clr)/.1);
     cursor: not-allowed;
     color: gray;
 }
-#timer_control button:first-child{
+
+#timer_control button:first-child {
     background-color: hsl(var(--sry-clr)/.8);
     margin-right: 1rem;
 }
-#timer_control button:last-child{
+
+#timer_control button:last-child {
     background-color: hsl(var(--act-clr)/.8);
 }
+
 .hours,
 .minutes,
-.seconds{
+.seconds {
     color: hsl(var(--sry-clr));
 }
-#custom_deadlines{
+
+#custom_deadlines {
     background-color: hsl(var(--sry-clr)/.5);
     padding: 1rem;
     margin-top: 2.5rem;
@@ -110,7 +128,8 @@ div#timer_setter button:active{
     display: flex;
     animation: fadein .5s ease-out;
 }
-#custom_deadlines .deadline{
+
+#custom_deadlines .deadline {
     border: none;
     outline: none;
     padding: .5rem 1rem;
@@ -122,15 +141,18 @@ div#timer_setter button:active{
     animation: fadein .5s ease-out;
     background-color: #000000cd;
     flex-wrap: wrap;
-    -webkit-box-reflect: below 1rem linear-gradient(transparent,#00000025);
+    -webkit-box-reflect: below 1rem linear-gradient(transparent, #00000025);
 }
-.deadline + .deadline{
+
+.deadline+.deadline {
     margin-left: .1rem;
 }
-audio{
+
+audio {
     display: none;
 }
-#custom_deadlines .deadline:disabled{
+
+#custom_deadlines .deadline:disabled {
     color: darkgray;
     cursor: not-allowed;
 }

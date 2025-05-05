@@ -1,27 +1,29 @@
 @import url(./vars.css);
 
 #modalBody {
-    display: none; 
+    display: none;
     position: absolute;
-    z-index: 1; 
-    padding-top: 100px; 
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    overflow: auto; 
+    overflow: auto;
     background-color: #000000a3;
     backdrop-filter: blur(10px);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 #modalBody svg {
     margin: auto auto;
     display: block;
     width: 20%;
     max-width: 700px;
 }
+
 #modalBody div {
     margin: auto;
     display: block;
@@ -33,11 +35,13 @@
     height: 150px;
     font-size: 3.5rem;
 }
+
 #modalBody,
-#modalBody svg, 
-#modalBody div {  
+#modalBody svg,
+#modalBody div {
     animation: fadein .3s ease-out;
 }
+
 #modalBody span {
     position: absolute;
     top: 3rem;
@@ -47,28 +51,34 @@
     font-weight: bold;
     transition: 0.3s;
 }
+
 #modalBody span:hover,
 #modalBody span:focus {
     color: #bbb;
     cursor: pointer;
- }
-#modalBody svg{
+}
+
+#modalBody svg {
     animation: an .1s infinite alternate ease-in-out;
     -webkit-animation: an .3s infinite alternate ease-in-out;
 }
-@keyframes an{
-    0%{
+
+@keyframes an {
+    0% {
         transform-origin: center center;
         transform: rotate(-15deg);
         transform: translateY(1rem);
     }
-    25%{
+
+    25% {
         transform: rotate(15deg);
     }
-    50%{
+
+    50% {
         transform: rotate(-15deg);
     }
-    100%{
+
+    100% {
         transform: rotate(15deg);
         transform: translateY(-1rem);
     }

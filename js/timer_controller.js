@@ -76,7 +76,7 @@ timer_setter.children[8].onclick = () => {
     secs_input.value = value;
 }
 
-function disableContent(){
+function disableContent() {
     timer_start.setAttribute('disabled', '');
     hours_input.setAttribute('disabled', '');
     minutes_input.setAttribute('disabled', '');
@@ -103,7 +103,7 @@ function getTimeRemaining(endtime) {
     const seconds = Math.floor((total / 1000) % 60);
     const minutes = Math.floor((total / 1000 / 60) % 60);
     const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-    
+
     return {
         total,
         hours,
@@ -112,27 +112,27 @@ function getTimeRemaining(endtime) {
     };
 }
 
-let hrs = hours_input.value == 0 
-    ? 1 
+let hrs = hours_input.value == 0
+    ? 1
     : hours_input.value;
-let mins = minutes_input.value == 0 
-    ? 1 
+let mins = minutes_input.value == 0
+    ? 1
     : minutes_input.value;
-let secs = secs_input.value == 0 
-    ? 1 
+let secs = secs_input.value == 0
+    ? 1
     : secs_input.value;
 
-function beepScreen(stop_beep){
+function beepScreen(stop_beep) {
     const beep = document.querySelector("audio");
     const modal = document.querySelector('#modalBody');
     const closeModal = document.querySelector('#closeModal');
     beep.volume = 0.5;
     beep.loop = true;
-    if (stop_beep){
+    if (stop_beep) {
         closeModal.parentElement.style.display = "none";
         beep.pause();
-        beep.currentTime = 0;    
-    }else{
+        beep.currentTime = 0;
+    } else {
         beep.play();
         modal.style.display = "flex";
     }
@@ -146,14 +146,14 @@ closeModal.onclick = () => {
 }
 
 function initializeClock(id, endtime) {
-        const clock = document.getElementById(id);
-        const hours_div = clock.querySelector('.hours');
-        const minutes_div = clock.querySelector('.minutes');
-        const seconds_div = clock.querySelector('.seconds');
+    const clock = document.getElementById(id);
+    const hours_div = clock.querySelector('.hours');
+    const minutes_div = clock.querySelector('.minutes');
+    const seconds_div = clock.querySelector('.seconds');
 
     function updateClock() {
-        const {total, hours, minutes, seconds} = getTimeRemaining(endtime);
-        
+        const { total, hours, minutes, seconds } = getTimeRemaining(endtime);
+
         hours_div.textContent = ('0' + hours).slice(-2);
         minutes_div.textContent = ('0' + minutes).slice(-2);
         seconds_div.textContent = ('0' + seconds).slice(-2);
@@ -163,24 +163,24 @@ function initializeClock(id, endtime) {
             clearInterval(timeinterval);
         }
     }
-    
+
     updateClock();
     timeinterval = setInterval(updateClock, 1000);
 }
 
-function resetContent(){
+function resetContent() {
     hours_input.value = 0;
     minutes_input.value = 0;
     secs_input.value = 0;
-    hrs_text.textContent = '00'; 
-    mins_text.textContent = '00'; 
-    secs_text.textContent = '00'; 
+    hrs_text.textContent = '00';
+    mins_text.textContent = '00';
+    secs_text.textContent = '00';
     secs = 0;
     mins = 0;
     hrs = 0;
     hrs_text.style.display = "inline";
     hrs_text.nextElementSibling.style.display = "inline";
-    
+
     mins_text.style.display = "inline";
     mins_text.nextElementSibling.style.display = "inline";
 
@@ -197,7 +197,7 @@ function resetContent(){
     hours_input.removeAttribute('disabled');
     minutes_input.removeAttribute('disabled');
     secs_input.removeAttribute('disabled');
-    
+
     deadlines[0].removeAttribute('disabled');
     deadlines[1].removeAttribute('disabled');
     deadlines[2].removeAttribute('disabled');
@@ -209,7 +209,7 @@ function resetContent(){
     deadlines[8].removeAttribute('disabled');
     clearInterval(timeinterval);
 }
-    
+
 timer_reset.onclick = resetContent;
 
 deadlines[0].onclick = () => {

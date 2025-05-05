@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- favicon -->
-        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-        <!-- Styles -->
-        <link rel="stylesheet" href="./css/tabs.css">
-        <link rel="stylesheet" href="./css/clocks.css">
-        <link rel="stylesheet" href="./css/timer.css">
-        <link rel="stylesheet" href="./css/stopwatch.css">
-        <link rel="stylesheet" href="./css/hint.css">
-        <link rel="stylesheet" href="./css/modal.css">
-        <!-- Scripts -->
-        <script src="./js/digital_clock.js"></script>
-        <title>CLOCK</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/tabs.css">
+    <link rel="stylesheet" href="./css/clocks.css">
+    <link rel="stylesheet" href="./css/timer.css">
+    <link rel="stylesheet" href="./css/stopwatch.css">
+    <link rel="stylesheet" href="./css/hint.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <!-- Scripts -->
+    <script src="./js/digital_clock.js"></script>
+    <title>CLOCK</title>
+</head>
+
 <body>
     <div class="tabs">
         <!-- Clock tab -->
@@ -43,46 +45,55 @@
                         <div class="hand second-hand"></div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="dropdown">
                 <span class="help">&quest;</span>
                 <div class="dropdown-content hint">
-                  <p class="hint">Click on clock to change it's style</p>
+                    <p class="hint">Click on clock to change it's style</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- Timer tab -->
         <input type="radio" id="timer_tab" name="tabs">
         <label for="timer_tab">Timer</label>
         <div class="tab timer_tab">
             <h2>Set Timer</h2>
             <div id="timer_setter">
-                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
-                <input type="number" min="0" max="24" value="0" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
-                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
-                
-                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
-                <input type="number" min="0" max="60" value="0" title="use buttons or up and down keys on your keyboard to change number">
-                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
-                
-                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
-                <input type="number" min="0" max="60" value="0" maxlength="2" title="use buttons or up and down keys on your keyboard to change number">
-                <button type="button" title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
+                <button type="button"
+                    title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
+                <input type="number" min="0" max="24" value="0" maxlength="2"
+                    title="use buttons or up and down keys on your keyboard to change number">
+                <button type="button"
+                    title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
+
+                <button type="button"
+                    title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
+                <input type="number" min="0" max="60" value="0"
+                    title="use buttons or up and down keys on your keyboard to change number">
+                <button type="button"
+                    title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
+
+                <button type="button"
+                    title="use buttons or up and down keys on your keyboard to change number">&plus;</button>
+                <input type="number" min="0" max="60" value="0" maxlength="2"
+                    title="use buttons or up and down keys on your keyboard to change number">
+                <button type="button"
+                    title="use buttons or up and down keys on your keyboard to change number">&minus;</button>
             </div>
-            
+
             <div id="timer_text">
                 <span id="hours" class="hours">00</span><span>H</span>
                 <span id="mins" class="minutes">00</span><span>M</span>
                 <span id="secs" class="seconds">00</span><span>S</span>
             </div>
-            
+
             <div id="timer_control">
                 <button type="button" id="timer_start">START</button>
                 <button type="button" id="timer_reset">RESET</button>
             </div>
-            
+
             <div id="custom_deadlines">
                 <button class="deadline">02H</button>
                 <button class="deadline">01H</button>
@@ -101,18 +112,47 @@
 
             <div id="modalBody">
                 <span id="closeModal">&times;</span>
-                <svg id="clockSvg" data-name="clockSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.82 271.45"><defs><style>.cls-1{fill:#ffffff20;}.cls-2{fill:#2094f3;}.cls-3{fill:#ff006a;}</style></defs><path class="cls-1" d="M205.79,276.34c-2.28-1.68-5.08-3-6.72-5.13-2.71-3.55-2.17-7.61.09-11.4l8-13.38c-38.76-37.2-53.19-81.67-36.7-132.93S224.7,34.92,277.63,27c0-3,0-6.36,0-9.69.05-6.72,4.39-11.44,10.51-11.46s10.55,4.68,10.61,11.37c0,3.32,0,6.65,0,9.82,6.41,1.14,12.58,2,18.65,3.36a117.43,117.43,0,0,1,42.61,19c21.25,15.05,37,34.62,45.71,59.24,12.53,35.21,9.84,69.5-7.54,102.59a10.5,10.5,0,1,1-18.75-9.44c5-9.77,9-19.87,10.95-30.68,4.63-25.42.57-49.38-12.45-71.7A103.32,103.32,0,0,0,273,49.42a103.7,103.7,0,0,0-85.14,79.18,101,101,0,0,0,6.77,66,103.47,103.47,0,0,0,106.67,59.82A102.19,102.19,0,0,0,349,235.82c3.33-2.37,7-3.93,10.84-2a16.46,16.46,0,0,1,6.11,5.46c4,6,7.17,12.54,11.24,18.47,4.56,6.65,4.33,15-5.49,18.63h-4.22c-4.25-1.31-6.76-4.45-8.8-8.18-1.76-3.22-3.73-6.32-5.64-9.52-.88.44-1.52.73-2.12,1.07a121.3,121.3,0,0,1-41.2,14.81c-4.33.71-8.69,1.22-13,1.82H280.8a25.15,25.15,0,0,0-2.56-.5,122.33,122.33,0,0,1-49.59-14.95c-1.35-.74-2.72-1.46-4.19-2.26-2,3.34-3.92,6.38-5.65,9.53-2,3.73-4.54,6.87-8.8,8.18Z" transform="translate(-163.18 -5.39)"/><path class="cls-2" d="M277.64,117.9c0-11.09-.06-22.18,0-33.27a10.53,10.53,0,0,1,17.52-7.9c2.72,2.34,3.6,5.47,3.59,9,0,19.63,0,39.26-.06,58.88a5.81,5.81,0,0,0,1.9,4.6c8.09,8,16.06,16.05,24.13,24,3.2,3.17,4.62,6.84,3.42,11.24A10.5,10.5,0,0,1,312,190.12a22,22,0,0,1-2.56-2.27c-9.16-9.14-18.27-18.33-27.48-27.41a13.75,13.75,0,0,1-4.36-10.59c.14-10.65,0-21.3,0-31.95Z" transform="translate(-163.18 -5.39)"/><path class="cls-3" d="M220.69,23.43A9.9,9.9,0,0,1,217,31.58c-9.56,8-19.11,16.08-28.78,24a10.5,10.5,0,0,1-13.55-16c9.49-8.11,19.12-16.08,28.75-24a10,10,0,0,1,11.38-1.35A10,10,0,0,1,220.69,23.43Z" transform="translate(-163.18 -5.39)"/><path class="cls-3" d="M367.46,12.48c2.32,1.1,5,1.8,6.9,3.37,9.44,7.63,18.73,15.44,28,23.27,4.86,4.11,5.5,10.51,1.73,15-3.91,4.69-10.25,5.24-15.27,1.12q-14.06-11.57-28-23.32c-3.91-3.29-5.1-7.81-3.44-12.08S362.74,13.13,367.46,12.48Z" transform="translate(-163.18 -5.39)"/></svg>
+                <svg id="clockSvg" data-name="clockSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.82 271.45">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #ffffff20;
+                            }
+
+                            .cls-2 {
+                                fill: #2094f3;
+                            }
+
+                            .cls-3 {
+                                fill: #ff006a;
+                            }
+                        </style>
+                    </defs>
+                    <path class="cls-1"
+                        d="M205.79,276.34c-2.28-1.68-5.08-3-6.72-5.13-2.71-3.55-2.17-7.61.09-11.4l8-13.38c-38.76-37.2-53.19-81.67-36.7-132.93S224.7,34.92,277.63,27c0-3,0-6.36,0-9.69.05-6.72,4.39-11.44,10.51-11.46s10.55,4.68,10.61,11.37c0,3.32,0,6.65,0,9.82,6.41,1.14,12.58,2,18.65,3.36a117.43,117.43,0,0,1,42.61,19c21.25,15.05,37,34.62,45.71,59.24,12.53,35.21,9.84,69.5-7.54,102.59a10.5,10.5,0,1,1-18.75-9.44c5-9.77,9-19.87,10.95-30.68,4.63-25.42.57-49.38-12.45-71.7A103.32,103.32,0,0,0,273,49.42a103.7,103.7,0,0,0-85.14,79.18,101,101,0,0,0,6.77,66,103.47,103.47,0,0,0,106.67,59.82A102.19,102.19,0,0,0,349,235.82c3.33-2.37,7-3.93,10.84-2a16.46,16.46,0,0,1,6.11,5.46c4,6,7.17,12.54,11.24,18.47,4.56,6.65,4.33,15-5.49,18.63h-4.22c-4.25-1.31-6.76-4.45-8.8-8.18-1.76-3.22-3.73-6.32-5.64-9.52-.88.44-1.52.73-2.12,1.07a121.3,121.3,0,0,1-41.2,14.81c-4.33.71-8.69,1.22-13,1.82H280.8a25.15,25.15,0,0,0-2.56-.5,122.33,122.33,0,0,1-49.59-14.95c-1.35-.74-2.72-1.46-4.19-2.26-2,3.34-3.92,6.38-5.65,9.53-2,3.73-4.54,6.87-8.8,8.18Z"
+                        transform="translate(-163.18 -5.39)" />
+                    <path class="cls-2"
+                        d="M277.64,117.9c0-11.09-.06-22.18,0-33.27a10.53,10.53,0,0,1,17.52-7.9c2.72,2.34,3.6,5.47,3.59,9,0,19.63,0,39.26-.06,58.88a5.81,5.81,0,0,0,1.9,4.6c8.09,8,16.06,16.05,24.13,24,3.2,3.17,4.62,6.84,3.42,11.24A10.5,10.5,0,0,1,312,190.12a22,22,0,0,1-2.56-2.27c-9.16-9.14-18.27-18.33-27.48-27.41a13.75,13.75,0,0,1-4.36-10.59c.14-10.65,0-21.3,0-31.95Z"
+                        transform="translate(-163.18 -5.39)" />
+                    <path class="cls-3"
+                        d="M220.69,23.43A9.9,9.9,0,0,1,217,31.58c-9.56,8-19.11,16.08-28.78,24a10.5,10.5,0,0,1-13.55-16c9.49-8.11,19.12-16.08,28.75-24a10,10,0,0,1,11.38-1.35A10,10,0,0,1,220.69,23.43Z"
+                        transform="translate(-163.18 -5.39)" />
+                    <path class="cls-3"
+                        d="M367.46,12.48c2.32,1.1,5,1.8,6.9,3.37,9.44,7.63,18.73,15.44,28,23.27,4.86,4.11,5.5,10.51,1.73,15-3.91,4.69-10.25,5.24-15.27,1.12q-14.06-11.57-28-23.32c-3.91-3.29-5.1-7.81-3.44-12.08S362.74,13.13,367.46,12.48Z"
+                        transform="translate(-163.18 -5.39)" />
+                </svg>
                 <div>TIME UP!!</div>
             </div>
 
             <div class="dropdown">
                 <span class="help">&quest;</span>
                 <div class="dropdown-content hint">
-                    <p class="hint">Use &plus; and &minus; buttons or <kbd>&uparrow;</kbd> and <kbd>&downarrow;</kbd> keys on your keyboard to change numbers</p>
+                    <p class="hint">Use &plus; and &minus; buttons or <kbd>&uparrow;</kbd> and <kbd>&downarrow;</kbd>
+                        keys on your keyboard to change numbers</p>
                 </div>
             </div>
         </div>
-        
+
         <!-- Stopwatch tab -->
         <input type="radio" id="stopwatch_tab" name="tabs">
         <label for="stopwatch_tab">Stopwatch</label>
@@ -131,7 +171,7 @@
             </div>
 
             <div id="laps">
-                
+
             </div>
 
             <div class="dropdown">
@@ -148,4 +188,5 @@
 <script src="./js/clock_toggle.js"></script>
 <script src="./js/timer_controller.js"></script>
 <script src="./js/stopwatch_controller.js"></script>
+
 </html>
